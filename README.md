@@ -6,6 +6,10 @@ This is a fork of https://github.com/gatsbyjs/gatsby-starter-default which shows
 
 [![walkthru](https://img.youtube.com/vi/bueXJInQt2c/1.jpg)](https://www.youtube.com/watch?v=bueXJInQt2c)
 
+## Make your own from scratch!
+
+Check our post on the Gatsby blog: [Turning the Static Dynamic: Gatsby + Netlify Functions + Netlify Identity](https://www.gatsbyjs.org/blog/2018-12-17-turning-the-static-dynamic/)
+
 ## How to start
 
 You can clone and deploy this sample project with one click:

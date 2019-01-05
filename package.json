@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "swyx <swyx@dontemailme.com>",
   "dependencies": {
+    "faunadb": "^2.5.2",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-create-client-paths": "^2.0.2",
@@ -26,10 +27,10 @@
     "develop": "gatsby develop",
     "start": "run-p start:**",
     "start:app": "npm run develop",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start:lambda": "netlify-lambda serve src/lambda -c ./webpack.config.js",
     "build": "run-p build:**",
     "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "build:lambda": "netlify-lambda build src/lambda -c ./webpack.config.js",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

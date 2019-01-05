@@ -8,7 +8,21 @@ import { initAuth } from '../app/services/auth'
 initAuth()
 
 class IndexPage extends React.Component {
-  state = { loading: false, msg: null }
+  state = { loading: false, msg: null, todos: [] }
+
+  componentDidMount() {
+    fetch('/.netlify/functions/todos-read-all')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        debugger
+        this.setState({
+          todos: data,
+        })
+      })
+  }
+
   handleClick = e => {
     e.preventDefault()
 
@@ -90,6 +104,12 @@ class IndexPage extends React.Component {
             <p>Now go build something great.</p>
             <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
               <Image />
+            </div>
+
+            <div>
+              {this.state.todos.map(todoObj => {
+                return <p key={todoObj.ts}>{todoObj.data.title}</p>
+              })}
             </div>
           </div>
         </div>
